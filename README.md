@@ -12,3 +12,5 @@ Integração Contínua que valida o HTML automaticamente a cada `git push`.
 3. Verifica se a tag `<title>` existe na página
 
 Se qualquer uma dessas regras falhar, o pipeline falha.
+
+O pipeline executa automaticamente a cada `git push` no repositorio.
