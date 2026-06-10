@@ -1,0 +1,31 @@
+name: Pipeline Aula
+
+on:
+  push
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verificar index.html
+        run: ls -l index.html
+
+      - name: Mostrar HTML
+        run: cat index.html
+
+      # Regra 1 - Verificar se existe a tag H1
+      - name: Verificar H1
+        run: grep "<h1>" index.html
+
+      # Regra 2 - Verificar se existe o DOCTYPE
+      - name: Verificar DOCTYPE
+        run: grep "<!DOCTYPE html>" index.html
+
+      # Regra 3 - Verificar se existe o titulo da pagina
+      - name: Verificar titulo
+        run: grep "<title>" index.html
+
+      - name: Mensagem final
+        run: echo "HTML validado com sucesso!"
